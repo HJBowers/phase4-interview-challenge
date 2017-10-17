@@ -1,0 +1,16 @@
+<%- include partials/header %>
+<%- include partials/navbar %>
+
+<div class="container-fluid">
+  <h1>Log into your account: </h1>
+
+  <form method="post" action="/login" class="form-group">
+    <label for="email">email</label>
+    <input name="email" type="text" class="form-control" id="email" placeholder="email">
+    <label for="password">password</label>
+    <input name="password" type="password" class="form-control" id="password" placeholder="password">
+    <input type="submit" class="btn btn-primary" />
+  </form>
+</div>
+
+<% include partials/footer %>
