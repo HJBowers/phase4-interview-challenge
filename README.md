@@ -79,13 +79,13 @@ Content in the header varies based on the user's authentication state.
 
 Users can:
 
-- [ ] __20:__ See the name of the website in the site-wide header.
-- [ ] __20:__ See links to "Sign Up" and "Sign In" when logged out.
-- [ ] __20:__ See links to "Profile" and "Sign Out" when logged in.
+- [x] __20:__ See the name of the website in the site-wide header.
+- [x] __20:__ See links to "Sign Up" and "Sign In" when logged out.
+- [x] __20:__ See links to "Profile" and "Sign Out" when logged in.
 
 Layout:
 
-- [ ] __20:__ The layout of the header matches the wireframes.
+- [x] __20:__ The layout of the header matches the wireframes.
 
 ## Home
 
@@ -93,17 +93,17 @@ Displays various album-related information.
 
 Routing:
 
-- [X] __20:__ Navigating to `/` loads the home page.
+- [x] __20:__ Navigating to `/` loads the home page.
 
 Users can:
 
-- [ ] __20:__ View all albums on the home page (under the "Records" heading).
+- [x] __20:__ View all albums on the home page (under the "Records" heading).
 - [ ] __20:__ View only the _**3 most recent**_ reviews on the home page sorted by newest first.
-- [ ] __20:__ Click on an album title to go to the album page (e.g. `/albums/<ALBUM ID>`).
+- [x] __20:__ Click on an album title to go to the album page (e.g. `/albums/<ALBUM ID>`).
 
 Layout:
 
-- [ ] __10:__ The site-wide header is visible on the home page.
+- [x] __10:__ The site-wide header is visible on the home page.
 - [ ] __20:__ The layout of the home page matches the wireframes.
 
 ## Sign Up
@@ -114,22 +114,22 @@ Users are able to sign up for a new account.
 
 Routing:
 
-- [ ] __20:__ Navigating to `/sign-up` loads the sign up page.
+- [x] __20:__ Navigating to `/sign-up` loads the sign up page.
 
 Users can:
 
-- [ ] __20:__ Sign up for an account with name, email, and password.
-- [ ] __20:__ Be redirected to their profile page (e.g. `/users/<USER ID>`) after signing up.
+- [x] __20:__ Sign up for an account with name, email, and password.
+- [x] __20:__ Be redirected to their profile page (e.g. `/users/<USER ID>`) after signing up.
 
 Users CANNOT:
 
-- [ ] __30:__ Sign up without a name value.
-- [ ] __30:__ Sign up without an email address value.
-- [ ] __30:__ Sign up with an email that is already in use.
+- [x] __30:__ Sign up without a name value.
+- [x] __30:__ Sign up without an email address value.
+- [x] __30:__ Sign up with an email that is already in use.
 
 Layout:
 
-- [ ] __10:__ The site-wide header is visible on the sign up page.
+- [x] __10:__ The site-wide header is visible on the sign up page.
 - [ ] __20:__ The layout of the sign up page matches the wireframes.
 
 ## Sign In
@@ -140,7 +140,7 @@ Users are able to sign in to an account.
 
 Routing:
 
-- [ ] __20:__ Navigating to `/sign-in` loads the sign in page.
+- [x] __20:__ Navigating to `/sign-in` loads the sign in page.
 
 Users can:
 
@@ -153,12 +153,11 @@ Users CANNOT:
 
 Layout:
 
-- [ ] __10:__ The site-wide header is visible on the sign in page.
+- [x] __10:__ The site-wide header is visible on the sign in page.
 - [ ] __20:__ The layout of the sign in page matches the wireframes.
 
 ## Sign Out
-
-Users are able to sign out.
+- [x] Users are able to sign out.
 
 #### Requirements
 

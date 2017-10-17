@@ -12,6 +12,7 @@
     "db:drop": "dropdb dbvinyl",
     "db:schema": "psql -d dbvinyl < src/db/schema.sql",
     "db:seed": "psql -d dbvinyl < src/db/albums.sql",
+    "db:reset": "dropdb dbvinyl && createdb dbvinyl && npm run db:schema && npm run db:seed",
     "test": "./node_modules/.bin/eslint src"
   },
   "license": "MIT",
