@@ -98,7 +98,7 @@ Routing:
 Users can:
 
 - [x] __20:__ View all albums on the home page (under the "Records" heading).
-- [ ] __20:__ View only the _**3 most recent**_ reviews on the home page sorted by newest first.
+- [x] __20:__ View only the _**3 most recent**_ reviews on the home page sorted by newest first.
 - [x] __20:__ Click on an album title to go to the album page (e.g. `/albums/<ALBUM ID>`).
 
 Layout:
@@ -144,12 +144,12 @@ Routing:
 
 Users can:
 
-- [ ] __20:__ Sign in to an existing account with an email address and password.
-- [ ] __20:__ Be redirected to their profile page (e.g. `/users/<USER ID>`) after signing in.
+- [x] __20:__ Sign in to an existing account with an email address and password.
+- [x] __20:__ Be redirected to their profile page (e.g. `/users/<USER ID>`) after signing in.
 
 Users CANNOT:
 
-- [ ] __30:__ Sign in with an invalid email address and password combination.
+- [x] __30:__ Sign in with an invalid email address and password combination.
 
 Layout:
 
@@ -163,7 +163,7 @@ Layout:
 
 Users can:
 
-- [ ] __20:__ Be redirected to the home page (e.g. `/`) after signing out by clicking the Sign Out button.
+- [x] __20:__ Be redirected to the home page (e.g. `/`) after signing out by clicking the Sign Out button.
 
 Users CANNOT:
 
@@ -232,12 +232,12 @@ Displays a form that allows users to submit album reviews.
 
 Routing:
 
-- [ ] __20:__ Navigating to `/albums/<ALBUM ID>/reviews/new` loads the new review page.
+- [x] __20:__ Navigating to `/albums/<ALBUM ID>/reviews/new` loads the new review page.
 
 Users can:
 
-- [ ] __20:__ Enter multi-line text in the text field.
-- [ ] __20:__ Click the Submit button to submit the review.
+- [x] __20:__ Enter multi-line text in the text field.
+- [x] __20:__ Click the Submit button to submit the review.
 - [ ] __20:__ Be redirected to the album page (e.g. `/albums/<ALBUM ID>`) after submitting the review.
 
 Users CANNOT:
