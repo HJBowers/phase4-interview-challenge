@@ -96,9 +96,11 @@ router.get('/albums/:albumID/reviews/new', (req, res) => {
 })
 
 router.post('/newReview', (req, res) => {
-  const userId = req.session.user.id
-  const { description, album_id } = req.body
-  if(userId) {
+  if(!req.session.user) {
+    res.redirect('/login')
+  } else {
+    const userId = req.session.user.id
+    const { description, album_id } = req.body
     if(description) {
       return db.createNewReview(userId, description, album_id)
       .then((review) => {
@@ -110,8 +112,6 @@ router.post('/newReview', (req, res) => {
         res.render('newReview', {album, user: req.session.user,  message: "Description field cannot be empty"})
       })
     }
-  } else {
-    res.redirect('/login')
   }
 })
 
