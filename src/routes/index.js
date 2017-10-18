@@ -93,29 +93,17 @@ router.get('/users/:id', (req, res) => {
   if (req.session.user === undefined) {
     res.redirect('/login')
   } else {
-    return db.userProfile(userId)
-    .then((user) => {
-      return db.userReviews(user.id)
-      .then((reviews) => {
-        res.render('profile', {user: req.session.user, edit: false, reviews})
-      })
+    return db.getReviewsByUserId(req.session.user.id)
+    .then((reviews) => {
+      res.render('profile', {user: req.session.user, edit: false, reviews})
     })
   }
-})
-
-router.get('/users/edit/:id', (req, res) => {
-  userId = req.params.id
-  return db.userProfile(userId)
-  .then((user) => {
-    res.render('profile', {user, edit: true, posts: []})
-  })
 })
 
 router.get('/albums/:albumID/reviews/new', (req, res) => {
   albumID = req.params.albumID
   return db.getAlbumByID(albumID)
   .then((album) => {
-    console.log("req.session.user::: ", req.session.user);
     res.render('newReview', {album, user: req.session.user})
   })
 })
@@ -123,16 +111,20 @@ router.get('/albums/:albumID/reviews/new', (req, res) => {
 router.post('/newReview', (req, res) => {
   // album_id = req.params.albumID
   const { description, user_id, album_id } = req.body
-  console.log("STUFF:::", req.boy, description, user_id, album_id);
   return db.createNewReview(user_id, description, album_id)
-    .then((review) => {
-      console.log("review or reviews?:::", review);
-      return userProfile(review.user_id)
-      .then((user) => {
-        res.redirect(`/albums/${album.id}`)
-      })
+  .then((review) => {
+    return userProfile(review.user_id)
+    .then((user) => {
+      res.redirect(`/albums/${album.id}`)
     })
   })
+})
+
+router.delete('/reviews/:id/delete', (req, res) => {
+  db.removeReview(req.params.id)
+  .then(() => res.redirect(`/albums/${album.id}`, {message: 'successful delete'}))
+  .catch(error => res.status(500).render('error', {error}))
+})
 
 
 module.exports = router

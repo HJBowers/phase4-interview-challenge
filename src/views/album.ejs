@@ -9,11 +9,11 @@
         <div class="col">
           <h2>Reviews</h2>
         </div>
-        <a class="btn btn-secondary" href="/newReview">Add Review</a>
+        <a class="btn btn-secondary" href="/albums/<%= album.id %>/reviews/new">Add Review</a>
       </div>
       <br></br>
         <% reviews.forEach((review) => { %>
-          <a href="/review/<%= review.id %>"><h5><%=album.title%></h5></a>
+          <h5><%=album.title%></h5>
           <span>Review Date: <%=review.date_created%></span>
           <br>
           <span>Description: <%=review.description%></span>

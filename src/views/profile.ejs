@@ -1,44 +1,40 @@
 <%- include partials/header %>
 <%- include partials/navbar %>
 
-<h1>WOW, you have a neat profile, <%=user.name%>!</h1>
-<br>
-<h2>Email: <%=user.email%></h2>
-<h2>ID: <%=user.id%></h2>
-<h2>Join Date: <%=user.join_date%></h2>
-
-<% if(edit) { %>
-  <br>
-  <h3>Edit Profile</h3>
-  <form action="<%= user.id %>" method="POST" >
-    <label for="name">Name: </label>
-    <input type="text" name="name" value="<%=user.name%>">
-    <br>
-    <button type="submit" name="save-submit">Save Changes</button>
-  </form>
-<% } else { %>
-  <h2>Name: <%=user.name%></h2>
-  <form action="edit/<%= user.id %>" method="GET" >
-    <button type="submit" name="edit-submit">Edit Profile</button>
-  </form>
-<% } %>
-
-<div>
-  <div class="review-feed">
-    <h1>Reviews</h1>
-    <% reviews.forEach((review) => { %>
-      <a href="/review/<%= review.id %>"><h2><%=review.album_id%></h2></a>
-      <br>
-      <span>Review Date: <%=review.date_created%></span>
-      <br>
-      <span>Description: <%=review.description%></span>
-      <br></br>
-      <form action="/review/edit/<%= review.id %>" method="GET" >
-        <button type="submit" name="edit-submit" class="fa fa-pencil"></button>
-      </form>
-      <button class="fa fa-trash"></button>
-    <% }) %>
+<div class="container">
+  <div class="col">
+    <div class="row">
+      <img class="profilePic" src="https://pbs.twimg.com/media/B0-RmE9CYAA1O71.jpg" alt="User Profile Picture"/>
+      <div class="col">
+        <h1><%=user.name%></h1>
+        <br>
+        <h2>Email: <%=user.email%></h2>
+        <h2>Join Date: <%=user.join_date%></h2>
+        <br></br>
+        <div>
+          <div>
+            <h1>Reviews</h1>
+            <% reviews.forEach((review) => { %>
+              <div>
+                <div class="titleContainer">
+                  <h5><a href="/albums/<%= review.album_id %>"><%= review.title %></a></h5>
+                  <span><%= review.date_created %></span>
+                  <div class="pull-right">
+                    <a href=`/reviews/${review.id}/delete` class="fa fa-trash" data-method="delete" data-token="{{csrf_token()}}" data-confirm="Are you sure?"></a>
+                  </div>
+                </div>
+                <div class="description">
+                  <span><%= review.description %></span>
+                </div>
+              </div>
+              <br></br>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
 
 <% include partials/footer %>

@@ -72,12 +72,35 @@ const getReviewsByDate = (cb) => {
       `, [album_id])
   }
 
-  `
-  SELECT reviews.*, users.name
-  FROM reviews
-  INNER JOIN users ON reviews.user_id = users.id
-  WHERE album_id = $1
-  `
+  const getReviewsByUserId = (userId) => {
+    return db.query(`
+      SELECT
+      reviews.*, users.name, albums.title
+      FROM
+      reviews
+      INNER JOIN
+      users
+      ON
+      reviews.user_id = users.id
+      INNER JOIN
+      albums
+      ON
+      reviews.album_id = albums.id
+      WHERE
+      reviews.user_id = $1
+      `, [userId])
+    }
+
+  const removeReview = (id) => {
+    return db.none('DELETE FROM reviews WHERE id = $1', [id])
+  }
+
+  // `
+  // SELECT reviews.*, users.name
+  // FROM reviews
+  // INNER JOIN users ON reviews.user_id = users.id
+  // WHERE album_id = $1
+  // `
 
   const createNewReview = (user_id, description, album_id) => {
     return db.query(`
@@ -124,16 +147,6 @@ const userProfile = (userId) => {
   `, [userId])
 }
 
-const userReviews = (userId) => {
-  return db.query(`
-    SELECT
-      *
-    FROM
-      reviews
-    WHERE
-      reviews.user_id=$1
-  `, [userId])
-}
 
 const getAlbumByID = (albumID) => {
   return db.one(`
@@ -153,8 +166,9 @@ module.exports = {
   signupUser,
   loginUser,
   userProfile,
-  userReviews,
+  getReviewsByUserId,
   getReviewsByDate,
+  removeReview,
   getAlbumByID,
   createNewReview,
   getReviewsByAlbumId

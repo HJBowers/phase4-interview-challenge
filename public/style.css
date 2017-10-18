@@ -39,3 +39,13 @@ html, body {
   flex-wrap: nowrap;
   justify-content: space-between;
 }
+
+.profilePic {
+  width: 249px;
+  height: 166px;
+}
+
+.description {
+  width: 65%;
+  height: 65%;
+}

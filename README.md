@@ -104,7 +104,7 @@ Users can:
 Layout:
 
 - [x] __10:__ The site-wide header is visible on the home page.
-- [ ] __20:__ The layout of the home page matches the wireframes.
+- [x] __20:__ The layout of the home page matches the wireframes.
 
 ## Sign Up
 
@@ -177,21 +177,21 @@ Displays user details and submitted album reviews.
 
 Routing:
 
-- [ ] __20:__ Navigating to `/users/<USER ID>` loads the user profile page.
+- [x] __20:__ Navigating to `/users/<USER ID>` loads the user profile page.
 
 Users can:
 
-- [ ] __20:__ View their name, email, and join date.
-- [ ] __20:__ View only their submitted reviews sorted by newest first.
-- [ ] __20:__ View "trash can" delete icons only next to reviews submitted by users.
+- [x] __20:__ View their name, email, and join date.
+- [x] __20:__ View only their submitted reviews sorted by newest first.
+- [x] __20:__ View "trash can" delete icons only next to reviews submitted by users.
 - [ ] __20:__ View a pop-up with a Cancel button, a Confirm button, and a message that reads, "Are you sure you want to delete this review?" after clicking the delete icon next to a review.
 - [ ] __20:__ Have the pop-up dismissed after clicking Cancel.
 - [ ] __20:__ Have the review deleted from the database and removed from the user profile page after clicking Confirm.
 
 Layout:
 
-- [ ] __10:__ The site-wide header is visible on the user profile page.
-- [ ] __20:__ The layout of the user profile page matches the wireframes.
+- [x] __10:__ The site-wide header is visible on the user profile page.
+- [x] __20:__ The layout of the user profile page matches the wireframes.
 
 ## Album Details
 
@@ -205,24 +205,24 @@ Routing:
 
 Users can:
 
-- [ ] __20:__ View the name of the album on the album page.
-- [ ] __20:__ View all reviews for the album on album page sorted by newest first.
-- [ ] __20:__ View "trash can" delete icons next to reviews the user can delete.
+- [x] __20:__ View the name of the album on the album page.
+- [x] __20:__ View all reviews for the album on album page sorted by newest first.
+- [x] __20:__ View "trash can" delete icons next to reviews the user can delete.
 - [ ] __20:__ View a pop-up with a Cancel button, a Confirm button, and a message that reads, "Are you sure you want to delete this review?" after clicking the trash can icon next to a review.
 - [ ] __20:__ Have the pop-up dismissed after clicking Cancel.
 - [ ] __20:__ Have the review deleted from the database and removed from the album page after clicking Confirm.
-- [ ] __20:__ View a button with the label "Add Review".
-- [ ] __20:__ Be redirected to the new review page (e.g. `/albums/<ALBUM ID>/reviews/new`) the after clicking the "Add Review" button.
+- [x] __20:__ View a button with the label "Add Review".
+- [x] __20:__ Be redirected to the new review page (e.g. `/albums/<ALBUM ID>/reviews/new`) the after clicking the "Add Review" button.
 
 Users CANNOT:
 
-- [ ] __20:__ Delete a review when not logged in.
-- [ ] __20:__ Delete another user's review.
+- [x] __20:__ Delete a review when not logged in.
+- [x] __20:__ Delete another user's review.
 
 Layout:
 
-- [ ] __10:__ The site-wide header is visible on the album page.
-- [ ] __20:__ The layout of the album page matches the wireframes.
+- [x] __10:__ The site-wide header is visible on the album page.
+- [x] __20:__ The layout of the album page matches the wireframes.
 
 ## New Review
 
@@ -243,12 +243,12 @@ Users can:
 Users CANNOT:
 
 - [ ] __20:__ Submit a review when not logged in.
-- [ ] __20:__ Submit an empty review.
+- [ ] __20:__ Submit an empty review. If they try, they receive an error.
 
 Layout:
 
-- [ ] __10:__ The site-wide header is visible on the new review page.
-- [ ] __20:__ The layout of the new review page matches the wireframes.
+- [x] __10:__ The site-wide header is visible on the new review page.
+- [x] __20:__ The layout of the new review page matches the wireframes.
 
 ---
 
@@ -265,7 +265,7 @@ Examples of features the interviewer might ask you to implement include:
 Users can:
 
 - See a "default" profile photo on their profile page before adding their own photo.
-- Update their profile photo (e.g. via Uploadcare).
+- 1 their profile photo (e.g. via Uploadcare).
 - See user profile photos next to their reviews.
 - Receive a welcome email after creating an account.
 - Visit user profile pages via "pretty" URLs, like "/users/james-franco".
