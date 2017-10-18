@@ -123,6 +123,10 @@ const signupUser = (name, email, password) => {
     RETURNING
       *
   `, [name, email, password])
+  .catch((error) => {
+     console.log('\nError in create query\n')
+     throw error
+   })
 }
 
 const loginUser = (email, password) => {

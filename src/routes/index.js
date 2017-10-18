@@ -34,15 +34,23 @@ router.get('/signup', (req, res) => {
 
 router.post('/signup', (req, res) => {
   const { name, email, password, confirm_password } = req.body
-  if (password !== confirm_password) {
-    res.render('signup', {error: 'Passwords don\'t match'})
+  if(name && email && password && confirm_password) {
+    if (password !== confirm_password) {
+      res.render('signup', {error: 'Passwords don\'t match'})
+    } else {
+      db.signupUser(name, email, password)
+      .then((user) => {
+        req.session.user = user
+        res.redirect(`/users/${user.id}`)
+      })
+      .catch(error => {
+        res.status(500).render('error', {error})
+        throw error
+      })
+    }
   } else {
-    db.signupUser(name, email, password)
-    .then((user) => {
-      req.session.user = user
-      res.redirect(`/users/${user.id}`)
-    })
-  }
+      res.render('signup', { user: req.session.user || null, message: "Fields cannot be empty"})
+    }
 })
 
 router.get('/login', (req, res) => {
