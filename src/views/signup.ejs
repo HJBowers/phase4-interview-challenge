@@ -1,20 +1,30 @@
 <%- include partials/header %>
 <%- include partials/navbar %>
 
-<div class="container-fluid">
-  <h1>Create your account: </h1>
-
-  <form method="post" action="/signup" class="form-group">
-    <label for="name">name</label>
-    <input name="name" type="text" class="form-control" id="name" placeholder="name">
-    <label for="email">email</label>
-    <input name="email" type="text" class="form-control" id="email" placeholder="email">
-    <label for="password">password</label>
-    <input name="password" type="password" class="form-control" id="password" placeholder="password">
-    <label for="confirm-password">confirm password</label>
-    <input name="confirm_password" type="password" class="form-control" id="confirm-password" placeholder="confirm password">
-    <input type="submit" class="btn btn-primary" />
-  </form>
+<div class="container row justify-content-md-center">
+  <div class="col col-lg-5">
+    <h1>Create your account: </h1>
+    <form method="post" action="/signup" class="form-group">
+      <div class="row justify-content-between">
+        <label for="name">Name: &nbsp;</label>
+        <input name="name" type="text" class="col-8 form-control" id="name" placeholder="name">
+      </div>
+      <div class="row justify-content-between">
+        <label for="email">Email: &nbsp;</label>
+        <input name="email" type="text" class="col-8 form-control" id="email" placeholder="email">
+      </div>
+      <div class="row justify-content-between">
+        <label for="password">Password: &nbsp;</label>
+        <input name="password" type="password" class="col-8 form-control" id="password" placeholder="password">
+      </div>
+      <div class="row justify-content-between">
+        <label for="confirm-password">Confirm Password: &nbsp;</label>
+        <input name="confirm_password" type="password" class="col-8 form-control" id="confirm-password" placeholder="confirm password">
+      </div>
+      <br>
+      <input type="submit" class="btn btn-primary" value="Sign Up"/>
+    </form>
+  </div>
 </div>
 
 <% include partials/footer %>

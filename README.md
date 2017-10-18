@@ -130,7 +130,7 @@ Users CANNOT:
 Layout:
 
 - [x] __10:__ The site-wide header is visible on the sign up page.
-- [ ] __20:__ The layout of the sign up page matches the wireframes.
+- [x] __20:__ The layout of the sign up page matches the wireframes.
 
 ## Sign In
 
@@ -154,7 +154,7 @@ Users CANNOT:
 Layout:
 
 - [x] __10:__ The site-wide header is visible on the sign in page.
-- [ ] __20:__ The layout of the sign in page matches the wireframes.
+- [x] __20:__ The layout of the sign in page matches the wireframes.
 
 ## Sign Out
 - [x] Users are able to sign out.
@@ -184,9 +184,9 @@ Users can:
 - [x] __20:__ View their name, email, and join date.
 - [x] __20:__ View only their submitted reviews sorted by newest first.
 - [x] __20:__ View "trash can" delete icons only next to reviews submitted by users.
-- [ ] __20:__ View a pop-up with a Cancel button, a Confirm button, and a message that reads, "Are you sure you want to delete this review?" after clicking the delete icon next to a review.
-- [ ] __20:__ Have the pop-up dismissed after clicking Cancel.
-- [ ] __20:__ Have the review deleted from the database and removed from the user profile page after clicking Confirm.
+- [x] __20:__ View a pop-up with a Cancel button, a Confirm button, and a message that reads, "Are you sure you want to delete this review?" after clicking the delete icon next to a review.
+- [x] __20:__ Have the pop-up dismissed after clicking Cancel.
+- [x] __20:__ Have the review deleted from the database and removed from the user profile page after clicking Confirm.
 
 Layout:
 
@@ -208,9 +208,9 @@ Users can:
 - [x] __20:__ View the name of the album on the album page.
 - [x] __20:__ View all reviews for the album on album page sorted by newest first.
 - [x] __20:__ View "trash can" delete icons next to reviews the user can delete.
-- [ ] __20:__ View a pop-up with a Cancel button, a Confirm button, and a message that reads, "Are you sure you want to delete this review?" after clicking the trash can icon next to a review.
-- [ ] __20:__ Have the pop-up dismissed after clicking Cancel.
-- [ ] __20:__ Have the review deleted from the database and removed from the album page after clicking Confirm.
+- [x] __20:__ View a pop-up with a Cancel button, a Confirm button, and a message that reads, "Are you sure you want to delete this review?" after clicking the trash can icon next to a review.
+- [x] __20:__ Have the pop-up dismissed after clicking Cancel.
+- [x] __20:__ Have the review deleted from the database and removed from the album page after clicking Confirm.
 - [x] __20:__ View a button with the label "Add Review".
 - [x] __20:__ Be redirected to the new review page (e.g. `/albums/<ALBUM ID>/reviews/new`) the after clicking the "Add Review" button.
 
