@@ -238,12 +238,12 @@ Users can:
 
 - [x] __20:__ Enter multi-line text in the text field.
 - [x] __20:__ Click the Submit button to submit the review.
-- [ ] __20:__ Be redirected to the album page (e.g. `/albums/<ALBUM ID>`) after submitting the review.
+- [x] __20:__ Be redirected to the album page (e.g. `/albums/<ALBUM ID>`) after submitting the review.
 
 Users CANNOT:
 
-- [ ] __20:__ Submit a review when not logged in.
-- [ ] __20:__ Submit an empty review. If they try, they receive an error.
+- [x] __20:__ Submit a review when not logged in.
+- [x] __20:__ Submit an empty review. If they try, they receive an error.
 
 Layout:
 

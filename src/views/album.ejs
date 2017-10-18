@@ -9,7 +9,9 @@
         <div class="col">
           <h2>Reviews</h2>
         </div>
-        <a class="btn btn-secondary" href="/albums/<%= album.id %>/reviews/new">Add Review</a>
+        <% if(user) { %>
+          <a class="btn btn-secondary" href="/albums/<%= album.id %>/reviews/new">Add Review</a>
+        <% } %>
       </div>
       <br></br>
         <% reviews.forEach((review) => { %>

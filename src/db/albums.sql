@@ -6,6 +6,7 @@ INSERT INTO albums (title, artist) VALUES
 ;
 
 INSERT INTO users(email, password, name) VALUES
+  ('nana','nope','NannerBot'),
   ('foil@Al.com','a','Aluminum Foil'),
   ('gold@Au.com','a','Gold Karats'),
   ('iron@Fe.com','a','Tony Stark'),
@@ -17,10 +18,10 @@ INSERT INTO reviews(description, user_id, album_id) VALUES
   ('SF, the best city ever outside of Oakland.','1','2'),
   ('New New York','2','4'),
   ('The new frontier. Or something...','3','3'),
-  ('Oakland is soooo awesome!','4','1'),
+  ('Oakland is soooo awesome!','5','4'),
   ('So many less words','2','1'),
-  ('SF stufffff','4','2'),
-  ('New York New York New York New York','1','4'),
+  ('SF stufffff','4','1'),
+  ('New York New York New York New York','5','2'),
   ('ROCKETS AND SHIPS IN SPACE!!','4','3'),
   ('Meow meow meow','3','1')
 ;

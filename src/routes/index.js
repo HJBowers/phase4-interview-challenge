@@ -1,19 +1,6 @@
 const router = require('express').Router()
 const db = require('../db/index.js')
 
-// const setLocals = (req, res, next) => {
-//   let loggedIn = false
-//   let username = null
-//   if (req.session.user) {
-//     loggedIn = true
-//     username = req.session.user.username
-//   }
-//   res.locals = {loggedIn, username}
-//   next()
-// }
-//
-// router.use(setLocals)
-
 router.get('/', (req, res) => {
   db.getAlbums((error, albums) => {
     if (error) {
@@ -104,27 +91,34 @@ router.get('/albums/:albumID/reviews/new', (req, res) => {
   albumID = req.params.albumID
   return db.getAlbumByID(albumID)
   .then((album) => {
-    res.render('newReview', {album, user: req.session.user})
+    res.render('newReview', {album, user: req.session.user,  message: ""})
   })
 })
 
 router.post('/newReview', (req, res) => {
-  // album_id = req.params.albumID
-  const { description, user_id, album_id } = req.body
-  return db.createNewReview(user_id, description, album_id)
-  .then((review) => {
-    return userProfile(review.user_id)
-    .then((user) => {
-      res.redirect(`/albums/${album.id}`)
-    })
-  })
+  const userId = req.session.user.id
+  const { description, album_id } = req.body
+  if(userId) {
+    if(description) {
+      return db.createNewReview(userId, description, album_id)
+      .then((review) => {
+        res.redirect(`/albums/${album_id}`)
+      })
+    } else {
+      return db.getAlbumByID(albumID)
+      .then((album) => {
+        res.render('newReview', {album, user: req.session.user,  message: "Description field cannot be empty"})
+      })
+    }
+  } else {
+    res.redirect('/login')
+  }
 })
 
-router.delete('/reviews/:id/delete', (req, res) => {
-  db.removeReview(req.params.id)
-  .then(() => res.redirect(`/albums/${album.id}`, {message: 'successful delete'}))
+router.get('/reviews/:id/delete', (req, res) => {
+  return db.removeReview(req.params.id)
+  .then(() => res.redirect(`/users/${req.session.user.id}`))
   .catch(error => res.status(500).render('error', {error}))
 })
-
 
 module.exports = router

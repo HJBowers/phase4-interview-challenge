@@ -8,6 +8,14 @@ const port = process.env.PORT || 3000
 
 const app = express()
 
+require('ejs')
+
+app.set('view engine', 'ejs')
+app.set('views', __dirname + '/views')
+
+app.use(express.static('public'))
+app.use(bodyParser.urlencoded({extended: false}))
+
 app.use(session({
   name: 'session',
   secret: 'nom nom nom',
@@ -18,13 +26,6 @@ app.use(session({
   }
 }))
 
-require('ejs')
-
-app.set('view engine', 'ejs')
-app.set('views', __dirname + '/views')
-
-app.use(express.static('public'))
-app.use(bodyParser.urlencoded({extended: false}))
 app.use('/', routes)
 
 app.use((req, res) => {
